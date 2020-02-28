@@ -1,7 +1,5 @@
 const initialState = {
-    todos:
-        [
-            {
+    todos: [{
                 item: 'Learn about reducers',
                 completed: false,
                 id: 3892987589
@@ -17,37 +15,55 @@ const initialState = {
                 item: 'Learn context API',
                 completed: false,
                 id: 389298563451
-            }
-        ]
+        }]
+}
+        
+const action1 = {
+    type: 'ADD_TODO',
+    payload: {
+        item: 'Enjoy React from now on',
+        id: 1234512345,
+        completed: false
+    }
 }
 
-     const reducer = (state, action) => {
+     const reducer = (state = initialState, action) => {
         switch (action.type) {
         
             case 'ADD_TODO':
-                const newTodo = {
-                    item: action.item,
-                    id: action.id,
-                    completed: action.completed
-                }
-                 return [ ...state.todos, newTodo ];
+                const newTodo = action.payload;
+        
+         return {
+             ...state,
+             todos: [...state.todos, newTodo]
+         }
             
             case 'TOGGLE_COMPLETED':
-                return state.map(todo => {
+const newState ={
+    ...state,
+    todos: [ ...state.todos]
+}
+                 
+                 return newState.todos.map(todo => {
                     if (todo.item == action.payload.item) {
-                        // { ...todo, completed: action.payload.completed}
+                        todo.completed = action.payload.completed;
+                        
+    
             
                     }
-                    return [...state, todo]
+                    return newState2;
                 });
             
-    case 'DELETE_TODO':
-return state.map(todo => {
+            case 'DELETE_TODO':
+                const newState2 = {
+                    ...state,
+                todos: [ ...state.todos]
+                };
+ return newState.todos.map(todo => {
     if (todo.item == action.payload.item) {
-        const arr = [...state];
-        arr.pop(todo);   
+        newState.todos.splice(newState.todos.indexOf(todo), 1);  
     }
-    return state;
+    return newState3;
 })
             
         default: return state;
