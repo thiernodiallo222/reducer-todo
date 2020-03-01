@@ -1,0 +1,43 @@
+.todos{
+     background: green;
+     width: 50%;
+     margin-left: 25%;
+     padding-left: 10px;
+     box-sizing: border-box;
+}
+
+.imput-field{
+     background: rgb(222,222,222);
+     width: 50%;
+     margin-left: 25%;
+     padding-left: 10px;
+     box-sizing: border-box;
+}
+
+
+.completed{
+     padding-left: 10px;
+      width: 50%;
+     margin-left: 25%;
+     background: white;
+     text-decoration: line-through;
+     color: yellow;
+     border: 10px solid black;
+     box-sizing: border-box;
+}
+
+
+.imput{
+width: 75%;
+}
+.add-tod{
+width: 20%;
+padding-left: 5%;
+box-sizing: border-box;
+}
+
+.clearAll{
+width: 20%;
+padding-left: 5%;
+box-sizing: border-box;
+}
